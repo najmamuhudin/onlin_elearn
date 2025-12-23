@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses | E-ONLINE IT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+    :root{
+        --primary-color:#0d8f73;
+        --font-color:#333;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f5f7fb;
+    }
+
+    /* NAVBAR */
+    .conatiner{
+        max-width:75%;
+        margin:auto;
+    }
+
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:20px 0;
+    }
+
+    .logo{
+        display: flex;
+        align-items: center;
+    }
+    .logo img{
+        width:75px;
+        height:75px;
+    }
+    .logo span{
+        color: var(--primary-color);
+        font-size:1.5rem;
+        font-weight:700;
+        margin-left:10px;
+    }
+
+    .menus ul{
+        display: flex;
+        gap:2rem;
+    }
+
+    .menus ul li{
+        list-style:none;
+    }
+
+    .menus ul li a{
+        text-decoration: none;
+        color:var(--font-color);
+        font-size:1.1rem;
+        font-weight: 400;
+    }
+
+    .menus ul li a:hover{
+        color: var(--primary-color);
+    }
+
+    .btns .view-all-btn{
+        background: var(--primary-color);
+        padding: 12px 25px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+    .btns .view-all-btn:hover{
+        background:#0bb48c;
+    }
+
+    /* HERO */
+    .hero {
+        background: #0d8f7362;
+        color:var(--primary-color);
+        text-align: center;
+        padding: 70px 20px;
+    }
+
+    /* FILTERS */
+    .filters {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .filters button {
+        margin: 5px;
+        padding: 10px 18px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: #fff;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .filters button:hover {
+        background: var(--primary-color);
+        color: #fff;
+    }
+
+    .filters .active {
+        background: var(--primary-color);
+        color: #fff;
+    }
+
+    /* COURSES */
+    .courses {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 0 60px;
+    }
+
+    .course-card {
+        background: #fff;
+        padding: 15px;
+        border-radius: 15px;
+        position: relative;
+        transition: transform .3s, box-shadow .3s;
+    }
+
+    .course-card:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .course-card img {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .price {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #fff;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-weight: bold;
+    }
+
+    .course-card h3 {
+        margin: 15px 0 5px;
+        font-size: 1.1rem;
+    }
+
+    .card-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        align-items: center;
+    }
+
+    .card-footer button {
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .card-footer button:hover{
+        background:#0bb48c;
+    }
+
+    /* VIEW ALL BUTTON */
+    .view-all {
+        display: block;
+        margin: 40px auto;
+        padding: 12px 25px;
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .view-all:hover{
+        background:#0bb48c;
+    }
+
+    /* FOOTER */
+    .footer{
+      background:#e9f4f5;
+      padding:70px 0 40px;
+      margin-top:3rem;
+    }
+
+    .footer-container{
+      max-width:75%;
+      margin:auto;
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+      gap:40px;
+    }
+
+    .footer-col h4{
+      margin-bottom:15px;
+      font-size:16px;
+    }
+
+    .footer-col p{
+      font-size:14px;
+      margin:7px 0;
+      color:#555;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .footer-col p:hover{
+      color:var(--primary-color);
+      transform:translateX(4px);
+    }
+
+    .logo-col .logo{
+      margin-bottom:15px;
+    }
+
+    .copy{
+      font-size:13px;
+      color:#777;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+   
+    .conatiner {
+        max-width: 90%;
+        padding: 0 10px;
+    }
+
+    /* Navbar */
+    .nav-container {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo span {
+        font-size: 0.7rem;
+    }
+
+    .menus ul {
+        gap: 10px;
+        text-align: center;
+    }
+
+    .menus ul li a {
+        font-size: 12px;
+    }
+
+    .btns {
+        display: none; 
+    }
+
+    /* Courses */
+    .courses {
+        padding: 0 10px;
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns:repeat(2,1fr);
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-col h4 {
+        font-size: 14px;
+    }
+
+    .footer-col p {
+        font-size: 12px;
+    }
+}
+
+   </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<nav class="conatiner">
+    <div class="nav-container">
+
+        <div class="logo">
+            <img src="img/logo-removebg-preview.png" alt="">
+            <span> E-ONLINE</span>
+        </div>
+
+        <div class="menus">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/service.html">Services</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+
+            </ul>
+        </div>
+
+        <div class="btns">
+              <a href="/register.html" class="view-all-btn">Get Started</a>
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Courses</h1>
+    <p>Home /Courses</p>
+</section>
+
+<!-- FILTER -->
+<section class="filters">
+    <button class="active">All</button>
+    <button>Programming</button>
+    <button>Web Development</button>
+    <button>Cybersecurity</button>
+</section>
+
+<!-- COURSES -->
+<section class="courses">
+    <!-- Card 1 -->
+    <div class="course-card">
+        <img src="img/3e70e1802ab870287f3b2fb1678638d0.jpg" alt="Python Basics">
+        <span class="price">$29</span>
+        <h3>Python Programming for Beginners</h3>
+        <p>6h 30m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 4.9</span>
+        </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="course-card">
+        <img src="img/3ff338fded7cab6c231606b35ebe18ab.jpg" alt="JavaScript Basics">
+        <span class="price">$35</span>
+        <h3>JavaScript Essentials</h3>
+        <p>5h 50m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 4.8</span>
+        </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="course-card">
+        <img src="img/d46df3f91e1b2c6c043e1625dd95389b.jpg" alt="Web Development">
+        <span class="price">$40</span>
+        <h3>Full Stack Web Development</h3>
+        <p>12h 20m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 5.0</span>
+        </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="course-card">
+        <img src="img/847282622098bf5c7fce6d5edd333014.jpg" alt="React JS">
+        <span class="price">$45</span>
+        <h3>React JS Advanced</h3>
+        <p>10h 10m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 4.9</span>
+        </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="course-card">
+        <img src="img/c214b36c86991b295a9e15b816449ecd.jpg" alt="Node JS">
+        <span class="price">$50</span>
+        <h3>Node.js & Express Fundamentals</h3>
+        <p>8h 45m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 4.8</span>
+        </div>
+    </div>
+    <!-- Card 6 -->
+    <div class="course-card">
+        <img src="img/5d9a3c5fb07d88142430a8729615ba18.jpg" alt="Cybersecurity">
+        <span class="price">$55</span>
+        <h3>Introduction to Cybersecurity</h3>
+        <p>7h 30m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 4.7</span>
+        </div>
+    </div>
+    <!-- Card 7 -->
+    <div class="course-card">
+        <img src="img/2f255e310dd21bb64cfeddcaddb7a1d3.jpg" alt="Data Science">
+        <span class="price">$60</span>
+        <h3>Data Science with Python</h3>
+        <p>15h 0m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 5.0</span>
+        </div>
+    </div>
+    <!-- Card 8 -->
+    <div class="course-card">
+        <img src="img/971459097bcef5266f93c61fdbc63a70.jpg" alt="AWS Cloud">
+        <span class="price">$65</span>
+        <h3>AWS Cloud Practitioner</h3>
+        <p>9h 40m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 4.8</span>
+        </div>
+    </div>
+    <!-- Card 9 -->
+    <div class="course-card">
+        <img src="img/4751804a41f9b2dbb33fbdc0fbe7abaa.jpg" alt="Linux Essentials">
+        <span class="price">$30</span>
+        <h3>Linux Essentials for IT</h3>
+        <p>5h 10m</p>
+        <div class="card-footer">
+            <button>Add to Cart</button>
+            <span>⭐ 4.6</span>
+        </div>
+    </div>
+</section>
+
+<button class="view-all">View all Courses</button>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col logo-col">
+      <div class="logo">
+        <img src="img/logo-removebg-preview.png" alt="">
+        <span>E-ONLINE</span>
+      </div>
+      <p>Privacy Policy</p>
+      <span>Copyright © Milton 2020,<br>All right Reserved</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Home</h4>
+      <p>Home</p>
+      <p>About Us</p>
+      <p>Our Process</p>
+      <p>Services</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Latest Courses</h4>
+      <p>General Science</p>
+      <p>Web Development</p>
+      <p>Civil Engineering</p>
+      <p>Business Studies</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Community</h4>
+      <p>Go Premium</p>
+      <p>Team Plans</p>
+      <p>Refer a Friend</p>
+      <p>Gift Cards</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Stay Connected</h4>
+      <p>Twitter</p>
+      <p>Instagram</p>
+      <p>Youtube</p>
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>

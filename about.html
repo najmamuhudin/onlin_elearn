@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>about-us</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+    :root{
+  --primary-color:#007E6D;
+  --secondary-color:#FE7131;
+  --para-color:#646E6F;
+  --font-color:#3A3A3A;
+  --card-color:#FFFFFF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family: "SUSE Mono", sans-serif;
+  
+}
+ .color-light{
+            background:rgb(191, 229, 224, 0.434)
+         
+        }
+
+         .conatiner{
+            max-width:75%;
+            margin:auto;
+        }
+
+        .nav-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+        }
+        .logo img{
+            
+            width:75px;
+            height:75px;
+        }
+        .logo span{
+          color: var(--primary-color);
+          font-size:1.2rem;
+          font-weight:700;
+          
+          
+        }
+
+        .menus ul{
+            display: flex;
+            gap:2rem;
+        }
+
+        .menus ul li{
+            list-style:none;
+        }
+
+        .menus ul li a{
+            text-decoration: none;
+            color:var(--font-color);
+            font-size:1.1rem;
+            font-weight: 400;
+            
+        }
+        .menus ul li a:hover{
+        
+          color: #00776d;
+        }
+
+        .btns button{
+            outline: none;
+            border:none;
+             background: #007E6D;
+             color:#ffffff;
+              font-size:1rem;
+              border-radius:10px;
+              cursor: pointer;
+        }
+        
+        
+        .btn-getstarted{
+            width:130px;
+            padding:15px;
+            
+        }
+
+         .view-all-btn {
+  background: #0d8f73;
+  padding: 12px 25px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.view-all-btn:hover {
+  background: #0bb48c;
+}
+
+/* IMAGE */
+.img{
+   
+    border-top-left-radius:25%;
+     border-top-right-radius:25%;
+    object-fit:cover;
+}
+
+.small{
+    width:290px;
+    height:320px;
+}
+
+
+
+/* ABOUT */
+.about{
+    display:flex;
+    justify-content: space-between;
+    padding:50px ;
+    margin-bottom:5rem;
+    
+}
+.about-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:3rem;
+}
+
+.about-text h1{
+    font-size:48px;
+    margin-bottom:20px;
+    color: #007E6D;
+}
+
+.about-text p{
+    width:420px;
+    line-height:1.7;
+}
+
+/* WHO */
+.who{
+    display:flex;
+    gap:60px;
+    padding:20px 10%;
+   position: relative;
+}
+
+.img-large{
+    width:320px;
+    height:220px;
+}
+.who-box{
+    background: #a8f0e2;
+    padding:30px;
+    width:300px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+    position: absolute;
+    right:600px;
+
+}
+
+
+/* WHAT */
+.what{
+    text-align:center;
+    padding:80px 10%;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:40px;
+   
+}
+
+.card{
+    width:240px;
+    padding:30px;
+    background:#a2e3da9c;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+     border-top-left-radius:25%;
+      border-top-right-radius:25%;
+}
+
+/* PLAN */
+.plan{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10%;
+    margin-top:1rem;
+    position: relative;
+
+}
+.img-footer img{
+    width:320px;
+    height:220px;
+      position: absolute;
+    left:800px;
+    top:0;
+    bottom:0;
+}
+.plan-box{
+    background:#44b2a3;
+    padding:20px;
+    width:250px;
+    position: absolute;
+    left:600px;
+    border-top-left-radius:25%;
+    border-bottom-right-radius:25%;
+    z-index:100;
+
+
+}
+
+.plan-box button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:1px solid var(--secondary);
+    background:none;
+    color:var(--secondary);
+}
+
+/* FOOTER */
+.footer{
+  background:#e9f4f5;
+  padding:70px 0 40px;
+  margin-top:3rem;
+}
+
+.footer-container{
+  max-width:75%;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+  gap:40px;
+}
+
+.footer-col h4{
+  margin-bottom:15px;
+  font-size:16px;
+}
+
+.footer-col p{
+  font-size:14px;
+  margin:7px 0;
+  color:#555;
+  cursor:pointer;
+}
+
+.footer-col p:hover{
+  color:var(--primary-color);
+  transform:translateX(4px);
+}
+
+.logo-col .logo{
+  margin-bottom:15px;
+}
+
+.copy{
+  font-size:13px;
+  color:#777;
+}
+
+ @media (max-width: 480px){
+
+
+
+
+.conatiner{
+    max-width: 90%;
+  } 
+  
+
+  .nav-container{
+    gap: 10px; 
+    display: flex;
+  }
+
+  .logo img{
+    width:45px;
+    height:45px;
+  }
+
+  .logo span{
+    font-size:.9rem;
+  }
+
+  .menus ul{
+     gap: 10px;
+    text-align: center;
+  }
+
+  .menus ul li a{
+    font-size:12px;
+  }
+
+ .btns{
+    display: none;
+ } 
+    
+
+
+.about-text p{
+  width:100%;
+}
+
+.right-img img{
+display: none;
+} 
+
+
+.img-large{
+  width:230px;
+  height:170px;
+}
+
+.who-box{
+  left:200px;
+  width:50%;
+ height:190px;
+ padding:20px;
+  margin-top:20px;
+}
+
+
+.cards{
+  flex-direction:column;
+}
+
+.card{
+  width:90%;
+}
+
+
+.plan{
+  padding:70px 15px;
+}
+
+.plan-box{
+  left:100px;
+  width:40%;
+  padding:0px;
+  margin-bottom:20px;
+  text-align: center;
+}
+
+.plan-box h2{
+  font-size:16px;
+margin-bottom:10px;
+padding-top:10px;
+}
+.plan-box p{
+  font-size:13px;
+}
+.img-footer img{
+  left:200px;
+  top:-50px;
+  bottom:0;
+  width:230px;
+  height:170px;
+  
+}
+
+
+   .footer-container {
+  grid-template-columns: repeat(2, 1fr);
+ 
+
+}
+} 
+
+    </style>
+</head>
+<body>
+   <div class="color-light">
+  <nav class="conatiner">
+        <div class="nav-container">
+
+            <!--logo-->
+            <div class="logo">
+                <img src="img/logo-removebg-preview.png" alt="">
+                <span> E-ONLINE</span>
+            </div>
+            
+      
+
+            <!--menus-->
+
+            <div class="menus">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/service.html">Services</a></li>
+                    <li><a href="/courses.html">Courses</a></li>
+
+                </ul>
+            </div>
+
+            <!--buttons-->
+            <div class="btns">
+                  <a href="/register.html" class="view-all-btn">Get Started</a>
+            </div>
+
+            
+
+        </div>
+    </nav>
+
+<!-- ABOUT US -->
+<section class="about conatiner">
+    <div class="about-text">
+        <h1>About Us</h1>
+        <p>
+            We are an online e-learning platform providing high-quality
+            digital education for students worldwide.
+        </p>
+    </div>
+<div class="right-img">
+ <img src="img/2732af67558660d678d52bb01241ac40.jpg" class="img small">
+</div>
+   
+</section>
+   </div>
+
+<!-- WHO WE ARE -->
+<section class="bg-color">
+  <div class="who">
+
+  
+    <img src="img/12c63c8ed352f7f61fd45ffcaa970280.jpg" class="img-large">
+
+    <div class="who-box">
+        <h2>Who We Are</h2>
+        <p>
+            Our mission is to make education accessible through
+            structured online learning experiences.
+        </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="what">
+    <h2>What We Do</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Online Courses</h3>
+            <p>Flexible digital learning</p>
+        </div>
+
+        <div class="card">
+            <h3>Expert Tutors</h3>
+            <p>Professional instructors</p>
+        </div>
+
+        <div class="card">
+            <h3>Certificates</h3>
+            <p>Verified course completion</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="plan">
+    <div class="plan-box">
+        <h2>Start Learning</h2>
+        <p>
+            Join thousands of learners improving their skills online.
+        </p>
+        <button>ENROLL NOW</button>
+    </div>
+<div class="img-footer">
+ <img src="img/6903fb0ef970221be8deda2019dfd771.jpg">
+</div>
+   
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col logo-col">
+      <div class="logo">
+                <img src="img/logo-removebg-preview.png" alt="">
+                <span>E-ONLINE</span>
+            </div>
+      <p>Privacy Policy</p>
+      <span>Copyright © Milton 2020,<br>All right Reserved</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Home</h4>
+      <p>Home</p>
+      <p>About Us</p>
+      <p>Our Process</p>
+      <p>Services</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Latest Courses</h4>
+      <p>General Science</p>
+      <p>Web Development</p>
+      <p>Civil Engineering</p>
+      <p>Business Studies</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Community</h4>
+      <p>Go Premium</p>
+      <p>Team Plans</p>
+      <p>Refer a Friend</p>
+      <p>Gift Cards</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Stay Connected</h4>
+      <p>Twitter</p>
+      <p>Instagram</p>
+      <p>Youtube</p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html> 

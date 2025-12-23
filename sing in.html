@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign In</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:#f2f6f5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.container{
+  width:900px;
+  height:520px;
+  background:#fff;
+  border-radius:20px;
+  display:flex;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(0,0,0,0.1);
+}
+
+/* LEFT */
+.left{
+  width:40%;
+  background:#3fb39a;
+  color:#fff;
+  padding:60px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.left h1{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.left p{
+  font-size:14px;
+  margin-bottom:35px;
+}
+
+.left a{
+  width:160px;
+  text-align:center;
+  padding:12px;
+  border-radius:30px;
+  border:1.5px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* RIGHT */
+.right{
+  width:60%;
+  padding:50px 60px;
+}
+
+.right h2{
+  text-align:center;
+  color:#3fb39a;
+  margin-bottom:30px;
+}
+
+.back-btn{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:20px;
+  text-decoration:none;
+  color:#3fb39a;
+  font-weight:600;
+  font-size:14px;
+}
+
+.input-box{
+  width:100%;
+  margin-bottom:16px;
+  position:relative;
+}
+
+.input-box input{
+  width:100%;
+  padding:13px 45px;
+  border-radius:30px;
+  border:none;
+  background:#f1f5f4;
+  outline:none;
+  font-size:14px;
+}
+
+.icon-left{
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#3fb39a;
+}
+
+.toggle{
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  color:#6b7280;
+}
+
+button{
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:30px;
+  background:#3fb39a;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.message{
+  margin-top:12px;
+  text-align:center;
+  font-size:14px;
+}
+
+.error{ color:#d93025; }
+.success{ color:#188038; }
+
+.signup{
+  text-align:center;
+  margin-top:18px;
+  font-size:14px;
+}
+
+.signup a{
+  color:#3fb39a;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* MOBILE (≤480px) */
+@media (max-width:480px){
+  body{ padding:15px; }
+
+  .container{
+    width:100%;
+    height:auto;
+    flex-direction:column;
+    border-radius:14px;
+  }
+
+  .left{ display:none; }
+
+  .right{
+    width:100%;
+    padding:35px 22px;
+  }
+
+  .right h2{ font-size:20px; }
+
+  .input-box input{
+    font-size:13px;
+    padding:11px 38px;
+  }
+
+  button{ font-size:14px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="left">
+    <h1>Hello, Friend!</h1>
+    <p>Enter your personal details and start your journey with us</p>
+    
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+
+    <a href="index.html" class="back-btn">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+
+    <h2>Sign In</h2>
+
+    <form id="loginForm">
+
+      <div class="input-box">
+        <i class="fa-solid fa-envelope icon-left"></i>
+        <input type="email" id="email" placeholder="Email">
+      </div>
+
+      <div class="input-box">
+        <i class="fa-solid fa-lock icon-left"></i>
+        <input type="password" id="password" placeholder="Password">
+        <i class="fa-regular fa-eye toggle"
+           id="eyePass"
+           onclick="togglePassword()"></i>
+      </div>
+
+      <button type="submit">Sign In</button>
+
+      <div id="msg" class="message"></div>
+
+      <div class="signup">
+        Don’t have an account? <a href="register.html">Create Account</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById("loginForm");
+const msg = document.getElementById("msg");
+
+form.addEventListener("submit", e=>{
+  e.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  msg.className="message";
+  msg.innerHTML="";
+
+  if(!email || !password){
+    msg.classList.add("error");
+    msg.innerHTML="Please enter email and password.";
+    return;
+  }
+
+  msg.classList.add("success");
+  msg.innerHTML="Login successful!";
+});
+
+/* Toggle password */
+function togglePassword(){
+  const input = document.getElementById("password");
+  const eye = document.getElementById("eyePass");
+
+  if(input.type==="password"){
+    input.type="text";
+    eye.classList.replace("fa-eye","fa-eye-slash");
+  }else{
+    input.type="password";
+    eye.classList.replace("fa-eye-slash","fa-eye");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elearn website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="color-light">
+    <nav class="conatiner">
+        <div class="nav-container">
+
+            <!--logo-->
+            <div class="logo">
+                <img src="img/logo-removebg-preview.png" alt="">
+                <span> E-ONLINE</span>
+            </div>
+            
+      
+
+            <!--menus-->
+
+            <div class="menus">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/service.html">Services</a></li>
+                    <li><a href="/courses.html">Courses</a></li>
+                </ul>
+            </div>
+
+            <!--buttons-->
+            <div class="btns">
+                  <a href="/register.html" class="view-all-btn">Get Started</a>
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+    ☰
+</button>
+
+        </div>
+    </nav>
+
+    
+
+    <!--hero-->
+    <section class="conatiner">
+        <div class="hero">
+            <div class="hero-center">
+                <div class="hero-txt">
+                <h1> Learn best Online Courses</h1>
+                <p>48,000 Online courses for you</p>
+            </div>
+
+
+    <div class="hero-input">
+
+  <!-- Category -->
+  <div class="btns" style="position:relative;">
+    <button class="input-btn" onclick="toggleCategory()">
+      Category
+      <img src="img/down.png" alt="category-img">
+    </button>
+
+    <!-- Dropdown -->
+    <div id="categoryDropdown" style="
+      display:none;
+      position:absolute;
+      top:45px;
+      left:0;
+      background:#fff;
+      border:1px solid #ccc;
+      border-radius:8px;
+      width:150px;
+      z-index:10;
+    ">
+      <div onclick="selectCategory('full stack developer')" style="padding:8px;cursor:pointer;">full stack developer</div>
+      <div onclick="selectCategory('Web Design')" style="padding:8px;cursor:pointer;">Web Design</div>
+      <div onclick="selectCategory('App development')" style="padding:8px;cursor:pointer;">App development</div>
+         <div onclick="selectCategory('data analysis')" style="padding:8px;cursor:pointer;">data analysis</div>
+                  <div onclick="selectCategory('cybersecurity')" style="padding:8px;cursor:pointer;">cybersecurity</div>
+                           <div onclick="selectCategory('Artificial intelligence')" style="padding:8px;cursor:pointer;">Artificial intelligence</div>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="input"> 
+    <input type="text" id="searchInput" placeholder="what do you want to learn?">
+  </div>
+
+  <!-- Search -->
+  <div class="btns">
+    <button class="input-btn" onclick="searchNow()">Search</button>
+  </div>
+
+</div>
+
+            
+        </div>
+    </section>
+    </div>
+
+
+   <section class="conatiner">
+    <div class="small-cards">
+
+        <!-- card 1 -->
+        <div class="small-card">
+            <div class="top-row">
+                <img src="img/international-student.png" alt="">
+                <p>Enrolled Students</p>
+            </div>
+            <span class="number">80,000+</span>
+        </div>
+
+        <!-- card 2 -->
+        <div class="small-card">
+            <div class="top-row">
+                <img src="img/online-course.png" alt="">
+                <p>Online Courses</p>
+            </div>
+            <span class="number">1,200+</span>
+        </div>
+
+        <!-- card 3 -->
+        <div class="small-card">
+            <div class="top-row">
+                <img src="img/global-education.png" alt="">
+                <p>Expert Instructors</p>
+            </div>
+            <span class="number">80,000+</span>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="conatiner">
+<div  class="courses-section">
+    <h2>Our Online Courses</h2>
+
+    <!-- FILTER MENU -->
+    <ul class="filter-menu">
+        <li class="active">ALL</li>
+        <li>BUSINESS</li>
+        <li>DESIGN</li>
+        <li>DEVELOPMENT</li>
+        <li>MANAGEMENT</li>
+        <li>TECHNOLOGY</li>
+        <li>PHOTO</li>
+    </ul>
+
+    <!-- COURSES GRID -->
+    <div class="courses-grid">
+
+        <!-- CARD 1 -->
+        <div class="course-card">
+    <div class="image-box">
+        <img src="img/webdesing.jpg" alt="">
+
+        <span class="price">$80</span>
+        <span class="stars">★★★★★</span>
+    </div>
+
+   <div class="content">
+    <h3>Master Web Design</h3>
+    <p class="author">Lecturer <span>admin</span> 
+        in <span>Creative Design</span></p>
+
+    <div class="divider"></div>
+
+    <div class="info-row">
+        <div class="info">
+            <img src="img/user.png" alt="user">
+            <span>2006</span>
+        </div>
+
+        <div class="info">
+            <img src="img/clock.png" alt="clock">
+            <span>12h 28m</span>
+        </div>
+
+        <div class="info">
+            <img src="img/book.png" alt="book">
+            <span>Lectures</span>
+        </div>
+    </div>
+</div>
+
+</div>
+ <!-- CARD 2 -->
+ <div class="course-card">
+    <div class="image-box">
+        <img src="img/app development.jpg" alt="">
+
+        <span class="price">$80</span>
+        <span class="stars">★★★★★</span>
+    </div>
+
+    
+        
+        <div class="content">
+    <h3>App development</h3>
+    <p class="author">Lecturer <span>admin</span> 
+        in <span>Creative Design</span></p>
+
+    <div class="divider"></div>
+
+    <div class="info-row">
+        <div class="info">
+            <img src="img/user.png" alt="user">
+            <span>2006</span>
+        </div>
+
+        <div class="info">
+            <img src="img/clock.png" alt="clock">
+            <span>12h 28m</span>
+        </div>
+
+        <div class="info">
+            <img src="img/book.png" alt="book">
+            <span>Lectures</span>
+        </div>
+    </div>
+</div>
+</div>
+ <!-- CARD 3 -->
+ <div class="course-card">
+    <div class="image-box">
+        <img src="img/full.jpg" alt="">
+
+        <span class="price">$80</span>
+        <span class="stars">★★★★★</span>
+    </div>
+
+    
+        
+        <div class="content">
+    <h3>full stack developer</h3>
+    <p class="author">Lecturer <span>admin</span> 
+        in <span>Creative Design</span></p>
+
+    <div class="divider"></div>
+
+    <div class="info-row">
+        <div class="info">
+            <img src="img/user.png" alt="user">
+            <span>2006</span>
+        </div>
+
+        <div class="info">
+            <img src="img/clock.png" alt="clock">
+            <span>12h 28m</span>
+        </div>
+
+        <div class="info">
+            <img src="img/book.png" alt="book">
+            <span>Lectures</span>
+        </div>
+    </div>
+</div>
+
+</div>
+ <!-- CARD 4 -->
+ <div class="course-card">
+    <div class="image-box">
+        <img src="img/data.jpg" alt="">
+
+        <span class="price">$80</span>
+        <span class="stars">★★★★★</span>
+    </div>
+
+   
+       
+      <div class="content">
+    <h3>data analysis</h3>
+    <p class="author">Lecturer <span>admin</span> 
+        in <span>Creative Design</span></p>
+
+    <div class="divider"></div>
+
+    <div class="info-row">
+        <div class="info">
+             <img src="img/user.png" alt="user">
+            <span>2006</span>
+        </div>
+
+        <div class="info">
+           <img src="img/clock.png" alt="clock">
+            <span>12h 28m</span>
+        </div>
+
+        <div class="info">
+             <img src="img/book.png" alt="book">
+            <span>Lectures</span>
+        </div>
+    </div>
+</div>
+</div>
+ <!-- CARD 5 -->
+ <div class="course-card">
+    <div class="image-box">
+        <img src="img/cyber.jpg" alt="">
+
+        <span class="price">$80</span>
+        <span class="stars">★★★★★</span>
+    </div>
+
+   
+        
+       <div class="content">
+  <h3>cybersecurity</h3>
+    <p class="author">Lecturer <span>admin</span> 
+        in <span>Creative Design</span></p>
+
+    <div class="divider"></div>
+
+    <div class="info-row">
+        <div class="info">
+            <img src="img/user.png" alt="user">
+            <span>2006</span>
+        </div>
+
+        <div class="info">
+            <img src="img/clock.png" alt="clock">
+            <span>12h 28m</span>
+        </div>
+
+        <div class="info">
+             <img src="img/book.png" alt="book">
+            <span>Lectures</span>
+        </div>
+    </div>
+</div>
+</div>
+ <!-- CARD 6 -->
+ <div class="course-card">
+    <div class="image-box">
+        <img src="img/Ai.jpg" alt="">
+
+        <span class="price">$80</span>
+        <span class="stars">★★★★★</span>
+    </div>
+
+    
+        
+        <div class="content">
+    <h3>Artificial intelligence</h3>
+    <p class="author">Lecturer <span>admin</span> 
+        in <span>Creative Design</span></p>
+
+    <div class="divider"></div>
+
+    <div class="info-row">
+        <div class="info">
+         <img src="img/user.png" alt="user">
+            <span>2006</span>
+        </div>
+
+        <div class="info">
+              <img src="img/clock.png" alt="clock">
+            <span>12h 28m</span>
+        </div>
+
+        <div class="info">
+           <img src="img/book.png" alt="book">
+            <span>Lectures</span>
+        </div>
+    </div>
+</div>  
+</div> 
+    </div>
+</div>
+</section>
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<section class="instructors-section">
+  <div class="instructors container">
+
+    <div class="header-row conatiner" >
+      <h2>Our Instructors</h2>
+
+      <!-- ARROW BUTTONS -->
+      <div class="arrows">
+        <button class="arrow-btn left"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="arrow-btn right"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="img-box">
+          <img src="img/06b6e933028bf69475c585c2fe7edbfe.jpg" alt="">
+          <ul class="social">
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-vimeo-v"></i></a></li>
+          </ul>
+        </div>
+        <div class="content">
+          <h3>Jesse Pinkman</h3>
+          <p>UI & UX Designer</p>
+          <div class="info">
+            <span><i class="fa-solid fa-user-group"></i> 2006 Students</span>
+            <span><i class="fa-solid fa-book"></i> 12 Courses</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-box">
+          <img src="img/9aa0bc99645d66f1949ddefa3f700d0f.jpg" alt="">
+          <ul class="social">
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-vimeo-v"></i></a></li>
+          </ul>
+        </div>
+        <div class="content">
+          <h3>Walter White</h3>
+          <p>UI & UX Designer</p>
+          <div class="info">
+            <span><i class="fa-solid fa-user-group"></i> 2006 Students</span>
+            <span><i class="fa-solid fa-book"></i> 12 Courses</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-box">
+          <img src="img/3a7a543e15be6872dc2d6437dc1cbe51.jpg" alt="">
+          <ul class="social">
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-vimeo-v"></i></a></li>
+          </ul>
+        </div>
+        <div class="content">
+          <h3>Skyler White</h3>
+          <p>UI & UX Designer</p>
+          <div class="info">
+            <span><i class="fa-solid fa-user-group"></i> 2006 Students</span>
+            <span><i class="fa-solid fa-book"></i> 12 Courses</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-box">
+          <img src="img/1c852ea928150dfcf54c5457dbca0a35.jpg" alt="">
+          <ul class="social">
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-vimeo-v"></i></a></li>
+          </ul>
+        </div>
+        <div class="content">
+          <h3>Jane Margolis</h3>
+          <p>UI & UX Designer</p>
+          <div class="info">
+            <span><i class="fa-solid fa-user-group"></i> 2006 Students</span>
+            <span><i class="fa-solid fa-book"></i> 12 Courses</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="dots"></div>
+  </div>
+</section>
+
+
+
+
+
+<section class="blogs-section">
+  <div class="blogs container ">
+
+    <div class="blogs-header conatiner">
+      <h2>Read Our Blogs</h2>
+      <a href="#" class="view-all-btn">VIEW ALL</a>
+    </div>
+
+    <div class="blog-cards">
+
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="img/3a7a543e15be6872dc2d6437dc1cbe51.jpg" alt="">
+        </div>
+        <div class="blog-content">
+          <span class="meta">April 22,2020 • 4 Comments</span>
+          <h3>Mauris pretium en tellu nullam dignissim sit amet commodo</h3>
+          <a href="#" class="read-more">READ MORE...</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="img/a90c959d81b6def4b1571bf775a1d199.jpg" alt="">
+        </div>
+        <div class="blog-content">
+          <span class="meta">April 22,2020 • 4 Comments</span>
+          <h3>Mauris pretium en tellu nullam dignissim sit amet commodo</h3>
+          <a href="#" class="read-more">READ MORE...</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="img/90198616084bcdcf772f541cda587c91.jpg" alt="">
+        </div>
+        <div class="blog-content">
+          <span class="meta">April 22,2020 • 4 Comments</span>
+          <h3>Mauris pretium en tellu nullam dignissim sit amet commodo</h3>
+          <a href="#" class="read-more">READ MORE...</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="subscribe-section">
+  <div class="subscribe-box">
+    <div class="sub-left">
+      <h2>Subscribe Our Newsletters</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur porttitor elit consectetur adipiscing 
+        nullam non eros pellentseque curabitur.
+      </p>
+
+      <div class="subscribe-form">
+        <input type="email" id="subscribeEmail" placeholder="Enter Your Email Address">
+        <button id="subscribeBtn">SUBSCRIBE</button>
+      </div>
+      <p id="subscribeMsg" style="margin-top:10px; font-size:14px;"></p>
+    </div>
+
+    <div class="sub-right">
+      <img src="img/00624ad47d734cabe65b8c139b7ec3da-removebg-preview.png" alt="Illustration">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col logo-col">
+      <div class="logo">
+                <img src="img/logo-removebg-preview.png" alt="">
+                <span>E-ONLINE</span>
+            </div>
+      <p>Privacy Policy</p>
+      <span>Copyright © Milton 2020,<br>All right Reserved</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Home</h4>
+      <p>Home</p>
+      <p>About Us</p>
+      <p>Our Process</p>
+      <p>Services</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Latest Courses</h4>
+      <p>General Science</p>
+      <p>Web Development</p>
+      <p>Civil Engineering</p>
+      <p>Business Studies</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Community</h4>
+      <p>Go Premium</p>
+      <p>Team Plans</p>
+      <p>Refer a Friend</p>
+      <p>Gift Cards</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Stay Connected</h4>
+      <p>Twitter</p>
+      <p>Instagram</p>
+      <p>Youtube</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  //Category
+var selectedCategory = "";
+
+  var categories = ["Web", "Design", "Programming","App development","full stack developer","data analysis","cybersecurity","Artificial intelligence"];
+
+  function toggleCategory(){
+    var drop = document.getElementById("categoryDropdown");
+    drop.style.display = drop.style.display === "block" ? "none" : "block";
+  }
+
+  function selectCategory(cat){
+    selectedCategory = cat;
+    document.getElementById("categoryDropdown").style.display = "none";
+  }
+
+  // Search button
+  function searchNow(){
+    var input = document.getElementById("searchInput");
+    var text = input.value.trim();
+
+    if(text === ""){
+      alert("Please type what you want to learn");
+      return;
+    }
+
+    if(categories.includes(text)){
+      alert("Searching for: " + text);
+    }else{
+      alert("Sorry, it's not in the category.");
+    }
+    input.value = "";
+  }
+
+
+
+    const subscribeBtn = document.getElementById("subscribeBtn");
+  const subscribeEmail = document.getElementById("subscribeEmail");
+  const subscribeMsg = document.getElementById("subscribeMsg");
+
+  subscribeBtn.addEventListener("click", function() {
+    const email = subscribeEmail.value.trim();
+
+   
+    if(email === ""){
+      subscribeMsg.style.color = "red";
+      subscribeMsg.textContent = "Please enter your email address.";
+      return;
+    }
+
+  
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if(!emailPattern.test(email)){
+      subscribeMsg.style.color = "white";
+      subscribeMsg.textContent = "Please enter a valid email address.";
+      return;
+    }
+
+   
+    subscribeMsg.style.color = "black";
+    subscribeMsg.textContent = "Thank you for subscribing!";
+    subscribeEmail.value = "";
+  });
+
+ 
+  subscribeEmail.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+      subscribeBtn.click();
+    }
+  });  
+
+
+  
+function toggleMenu(){
+    document.querySelector(".menus").classList.toggle("active");
+    document.querySelector(".btns").classList.toggle("active");
+}
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

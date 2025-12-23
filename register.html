@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Account</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:#f2f6f5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.container{
+  width:950px;
+  height:560px;
+  background:#fff;
+  border-radius:20px;
+  display:flex;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(0,0,0,0.1);
+}
+
+/* LEFT */
+.left{
+  width:40%;
+  background:#3fb39a;
+  color:#fff;
+  padding:60px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.left h1{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.left p{
+  font-size:14px;
+  margin-bottom:35px;
+}
+
+.left a{
+  width:150px;
+  text-align:center;
+  padding:12px;
+  border-radius:30px;
+  border:1.5px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* RIGHT */
+.right{
+  width:60%;
+  padding:45px 55px;
+  position:relative;
+}
+
+.right h2{
+  text-align:center;
+  color:#3fb39a;
+  margin-bottom:25px;
+}
+
+/* Back button */
+.back-btn{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-bottom:20px;
+  text-decoration:none;
+  color:#3fb39a;
+  font-weight:600;
+  font-size:14px;
+}
+.back-btn i{
+  font-size:16px;
+}
+
+.row{
+  display:flex;
+  gap:15px;
+}
+
+.input-box{
+  width:100%;
+  margin-bottom:14px;
+  position:relative;
+}
+
+.input-box input{
+  width:100%;
+  padding:12px 45px;
+  border-radius:30px;
+  border:none;
+  background:#f1f5f4;
+  outline:none;
+  font-size:14px;
+}
+
+/* Left lock icon */
+.icon-left{
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#3fb39a;
+  font-size:16px;
+}
+
+/* Eye icon */
+.toggle{
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  color:#6b7280;
+}
+
+.terms{
+  font-size:13px;
+  margin:10px 0 15px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+button{
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:30px;
+  background:#3fb39a;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.message{
+  margin-top:12px;
+  font-size:14px;
+  text-align:center;
+}
+
+.error{ color:#d93025; }
+.success{ color:#188038; }
+
+.signin{
+  text-align:center;
+  margin-top:15px;
+  font-size:14px;
+}
+
+.signin a{
+  color:#3fb39a;
+  text-decoration:none;
+  font-weight:600;
+}
+
+
+
+
+@media (max-width: 480px) {
+
+  body{
+    padding: 15px;
+  }
+
+  .container{
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+
+  .left{
+    display:none;
+  }
+  .right{
+    width: 100%;
+  }
+
+
+  .right{
+    padding: 35px 22px;
+  }
+
+  .right h2{
+    font-size: 20px;
+  }
+
+  .back-btn{
+    font-size: 12.5px;
+    margin-bottom: 15px;
+  }
+
+  .row{
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .input-box input{
+    font-size: 13px;
+    padding: 11px 38px;
+  }
+
+  .terms{
+    font-size: 12px;
+  }
+
+  button{
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .signin{
+    font-size: 13px;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT PANEL -->
+  <div class="left">
+    <h1>Welcome!</h1>
+    <p>To keep connected with us please login with your personal info</p>
+    <a href="sing in.html">SIGN IN</a>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right">
+
+    <!-- Back button above Create Account -->
+    <a href="index.html" class="back-btn">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+
+    <h2>Create Account</h2>
+
+    <form id="signupForm">
+
+      <div class="row">
+        <div class="input-box">
+          <input type="text" id="fname" placeholder="First name">
+        </div>
+        <div class="input-box">
+          <input type="text" id="lname" placeholder="Last name">
+        </div>
+      </div>
+
+      <div class="input-box">
+        <input type="email" id="email" placeholder="Email">
+      </div>
+
+      <div class="input-box">
+        <input type="tel" id="phone" placeholder="Phone">
+      </div>
+
+      <div class="row">
+        <!-- Password -->
+        <div class="input-box">
+          <i class="fa-solid fa-lock icon-left"></i>
+          <input type="password" id="password" placeholder="Password">
+          <i class="fa-regular fa-eye toggle"
+             id="eyePass"
+             onclick="togglePassword('password','eyePass')"></i>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-box">
+          <i class="fa-solid fa-lock icon-left"></i>
+          <input type="password" id="confirm" placeholder="Confirm password">
+          <i class="fa-regular fa-eye toggle"
+             id="eyeConfirm"
+             onclick="togglePassword('confirm','eyeConfirm')"></i>
+        </div>
+      </div>
+
+      <div class="terms">
+        <input type="checkbox" id="terms">
+        <label>I accept the Terms & Conditions</label>
+      </div>
+
+      <button type="submit">Create account</button>
+
+      <div id="msg" class="message"></div>
+
+      <div class="signin">
+        Already have an account? <a href="sing in.html">Sign in</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById("signupForm");
+const inputs = form.querySelectorAll("input");
+const msg = document.getElementById("msg");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const password = document.getElementById("password").value;
+  const confirm = document.getElementById("confirm").value;
+
+  msg.className = "message";
+  msg.innerHTML = "";
+
+  if([...inputs].some(i => i.type !== "checkbox" && !i.value.trim())){
+    return showError("Please fill in all fields.");
+  }
+
+  const strongPassword =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  if(!strongPassword.test(password)){
+    return showError(
+      "Password must contain uppercase, lowercase, number, special character and be at least 8 characters."
+    );
+  }
+
+  if(password !== confirm){
+    return showError("Passwords do not match.");
+  }
+
+  if(!document.getElementById("terms").checked){
+    return showError("You must accept the Terms & Conditions.");
+  }
+
+  msg.classList.add("success");
+  msg.innerHTML = "Account created successfully!";
+  form.reset();
+});
+
+/* Error helper */
+function showError(text){
+  msg.classList.add("error");
+  msg.innerHTML = text;
+}
+
+/* Clear message on typing */
+inputs.forEach(input=>{
+  input.addEventListener("input", ()=>{
+    msg.innerHTML="";
+    msg.className="message";
+  });
+});
+
+/* Toggle password visibility */
+function togglePassword(inputId, eyeId){
+  const input = document.getElementById(inputId);
+  const eye = document.getElementById(eyeId);
+
+  if(input.type === "password"){
+    input.type = "text";
+    eye.classList.remove("fa-eye");
+    eye.classList.add("fa-eye-slash");
+  }else{
+    input.type = "password";
+    eye.classList.remove("fa-eye-slash");
+    eye.classList.add("fa-eye");
+  }
+}
+</script>
+
+</body>  
+</html>
