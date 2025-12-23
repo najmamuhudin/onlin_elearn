@@ -32,7 +32,8 @@ body{
 }
 
 .container{
-  width:900px;
+  width: 100%;
+  max-width: 900px;
   height:520px;
   background:#fff;
   border-radius:20px;
@@ -161,14 +162,30 @@ button{
   text-decoration:none;
 }
 
+/* TABLET (≤768px) */
+@media (max-width:768px){
+  .container{
+    width: 90%;
+    height: auto; 
+    flex-direction: column;
+  }
+  
+  .left {
+    display: none; /* Hide left panel on tablet same as mobile to save space */
+  }
+  
+  .right {
+    width: 100%;
+    padding: 40px 30px;
+  }
+}
+
 /* MOBILE (≤480px) */
 @media (max-width:480px){
   body{ padding:15px; }
 
   .container{
     width:100%;
-    height:auto;
-    flex-direction:column;
     border-radius:14px;
   }
 

@@ -239,6 +239,21 @@ body{
   color:#777;
 }
 
+@media (max-width: 1024px) {
+    .conatiner {
+        max-width: 90%;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 480px) {
 
   .conatiner{
@@ -342,16 +357,15 @@ body{
             <div class="menus">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/service.html">Services</a></li>
-                    <li><a href="/courses.html">Courses</a></li>
-                    
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="courses.html">Courses</a></li>
                 </ul>
             </div>
 
             <!--buttons-->
             <div class="btns">
-                  <a href="/register.html" class="view-all-btn">Get Started</a>
+                  <a href="register.html" class="view-all-btn">Get Started</a>
             </div>
 
       
