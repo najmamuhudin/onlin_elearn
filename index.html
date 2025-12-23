@@ -20,8 +20,10 @@
                 <img src="img/logo-removebg-preview.png" alt="">
                 <span> E-ONLINE</span>
             </div>
-            
-      
+
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
 
             <!--menus-->
 
@@ -38,10 +40,6 @@
             <div class="btns">
                   <a href="register.html" class="view-all-btn">Get Started</a>
             </div>
-
-            <button class="menu-btn" onclick="toggleMenu()">
-    ☰
-</button>
 
         </div>
     </nav>
@@ -679,10 +677,24 @@ var selectedCategory = "";
 
 
   
-function toggleMenu(){
-    document.querySelector(".menus").classList.toggle("active");
-    document.querySelector(".btns").classList.toggle("active");
-}
+    const hamburger = document.querySelector('.hamburger');
+    const menus = document.querySelector('.menus');
+    const btns = document.querySelector('.btns');
+
+    hamburger.addEventListener('click', () => {
+        menus.classList.toggle('active');
+        btns.classList.toggle('active');
+        
+        // Toggle icon between bars and times (X)
+        const icon = hamburger.querySelector('i');
+        if (menus.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
 
 
 

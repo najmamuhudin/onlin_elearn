@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Courses | E-ONLINE IT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
    <style>
     :root{
         --primary-color:#0d8f73;
@@ -273,7 +274,7 @@
     }
 
     .menus ul li a {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .btns {
@@ -303,6 +304,58 @@
     }
 }
 
+   /* HAMBURGER MENU STYLES */
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-container {
+            position: relative;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+        
+        .menus {
+            width: 100%;
+            display: none;
+            text-align: center;
+            padding-top: 1rem;
+        }
+
+        .menus.active {
+            display: block;
+        }
+        
+        .menus ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .menus ul li a {
+            font-size: 15px; /* User preference */
+        }
+
+        .btns {
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+            display: none; 
+        }
+        
+         .btns.active {
+            display: block;
+        }
+    }
    </style>
 </head>
 <body>
@@ -314,6 +367,10 @@
         <div class="logo">
             <img src="img/logo-removebg-preview.png" alt="">
             <span> E-ONLINE</span>
+        </div>
+
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
         </div>
 
         <div class="menus">
@@ -498,4 +555,24 @@
   </div>
 </footer>
 </body>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const menus = document.querySelector('.menus');
+    const btns = document.querySelector('.btns');
+
+    hamburger.addEventListener('click', () => {
+        menus.classList.toggle('active');
+        btns.classList.toggle('active');
+        
+        // Toggle icon between bars and times (X)
+        const icon = hamburger.querySelector('i');
+        if (menus.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+</script>
 </html>
