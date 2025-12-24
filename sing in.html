@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sign In</title>
+<title>SignIn</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- Google Font -->
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
+
 <link rel="stylesheet"
  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -42,7 +42,7 @@ body{
   box-shadow:0 25px 60px rgba(0,0,0,0.1);
 }
 
-/* LEFT */
+
 .left{
   width:40%;
   background:#3fb39a;
@@ -74,7 +74,7 @@ body{
   font-weight:600;
 }
 
-/* RIGHT */
+
 .right{
   width:60%;
   padding:50px 60px;
@@ -162,7 +162,7 @@ button{
   text-decoration:none;
 }
 
-/* TABLET (≤768px) */
+
 @media (max-width:768px){
   .container{
     width: 90%;
@@ -171,7 +171,7 @@ button{
   }
   
   .left {
-    display: none; /* Hide left panel on tablet same as mobile to save space */
+    display: none; 
   }
   
   .right {
@@ -180,7 +180,7 @@ button{
   }
 }
 
-/* MOBILE (≤480px) */
+
 @media (max-width:480px){
   body{ padding:15px; }
 
@@ -212,14 +212,14 @@ button{
 
 <div class="container">
 
-  <!-- LEFT -->
+
   <div class="left">
     <h1>Hello, Friend!</h1>
     <p>Enter your personal details and start your journey with us</p>
     
   </div>
 
-  <!-- RIGHT -->
+  
   <div class="right">
 
     <a href="index.html" class="back-btn">
@@ -278,7 +278,7 @@ form.addEventListener("submit", e=>{
   msg.innerHTML="Login successful!";
 });
 
-/* Toggle password */
+
 function togglePassword(){
   const input = document.getElementById("password");
   const eye = document.getElementById("eyePass");

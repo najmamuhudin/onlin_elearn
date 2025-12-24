@@ -1074,7 +1074,7 @@ input {
   }
 
 
-  /* Footer */
+  
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
 
@@ -1082,7 +1082,7 @@ input {
 
 }
 
-/* HAMBURGER */
+
 .hamburger {
   display: none;
   cursor: pointer;

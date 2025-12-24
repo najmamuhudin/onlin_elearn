@@ -10,10 +10,10 @@
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Google Font -->
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- Font Awesome Icons -->
+
 <link rel="stylesheet"
  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -43,7 +43,6 @@ body{
   box-shadow:0 25px 60px rgba(0,0,0,0.1);
 }
 
-/* LEFT */
 .left{
   width:40%;
   background:#3fb39a;
@@ -75,7 +74,7 @@ body{
   font-weight:600;
 }
 
-/* RIGHT */
+
 .right{
   width:60%;
   padding:45px 55px;
@@ -88,7 +87,7 @@ body{
   margin-bottom:25px;
 }
 
-/* Back button */
+
 .back-btn{
   display:flex;
   align-items:center;
@@ -124,7 +123,7 @@ body{
   font-size:14px;
 }
 
-/* Left lock icon */
+
 .icon-left{
   position:absolute;
   left:18px;
@@ -134,7 +133,7 @@ body{
   font-size:16px;
 }
 
-/* Eye icon */
+
 .toggle{
   position:absolute;
   right:18px;
@@ -187,7 +186,7 @@ button{
 
 
 
-/* TABLET (≤768px) */
+
 @media (max-width: 768px) {
   .container {
     width: 90%;
@@ -269,17 +268,17 @@ button{
 
 <div class="container">
 
-  <!-- LEFT PANEL -->
+ 
   <div class="left">
     <h1>Welcome!</h1>
     <p>To keep connected with us please login with your personal info</p>
     <a href="sing in.html">SIGN IN</a>
   </div>
 
-  <!-- RIGHT PANEL -->
+ 
   <div class="right">
 
-    <!-- Back button above Create Account -->
+   
     <a href="index.html" class="back-btn">
       <i class="fa-solid fa-arrow-left"></i> Back
     </a>
@@ -306,7 +305,7 @@ button{
       </div>
 
       <div class="row">
-        <!-- Password -->
+       
         <div class="input-box">
           <i class="fa-solid fa-lock icon-left"></i>
           <input type="password" id="password" placeholder="Password">
@@ -315,7 +314,7 @@ button{
              onclick="togglePassword('password','eyePass')"></i>
         </div>
 
-        <!-- Confirm Password -->
+       
         <div class="input-box">
           <i class="fa-solid fa-lock icon-left"></i>
           <input type="password" id="confirm" placeholder="Confirm password">
@@ -382,13 +381,12 @@ form.addEventListener("submit", function(e){
   form.reset();
 });
 
-/* Error helper */
 function showError(text){
   msg.classList.add("error");
   msg.innerHTML = text;
 }
 
-/* Clear message on typing */
+
 inputs.forEach(input=>{
   input.addEventListener("input", ()=>{
     msg.innerHTML="";
@@ -396,7 +394,7 @@ inputs.forEach(input=>{
   });
 });
 
-/* Toggle password visibility */
+
 function togglePassword(inputId, eyeId){
   const input = document.getElementById(inputId);
   const eye = document.getElementById(eyeId);
